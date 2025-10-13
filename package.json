@@ -9,6 +9,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.13.11"
+    "@astrojs/mdx": "^4.3.6",
+    "@iconify-json/lucide": "^1.2.68",
+    "@lucide/astro": "^0.544.0",
+    "accessible-astro-components": "^5.0.1",
+    "astro": "^5.14.1",
+    "astro-icon": "^1.1.5",
+    "sass": "^1.93.2"
   }
 }

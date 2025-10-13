@@ -1,0 +1,24 @@
+// | -------------------------------------------------------------
+// | Root
+// | -------------------------------------------------------------
+
+// @use '../abstracts/colors' as *;
+@use "../abstracts" as *;
+
+:root {
+  
+  color-scheme: light dark;
+  interpolate-size: allow-keywords;
+
+  @each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+      --#{$color}-#{$shade}: #{$value};
+    }
+  }
+  
+  @include breakpoint(medium) {
+    --section-spacing: 7rem;
+  }
+
+  --container-width: clamp(16rem, 93vw, 85rem);
+}

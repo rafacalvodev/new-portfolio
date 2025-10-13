@@ -1,0 +1,109 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import { Pagination, Media } from "accessible-astro-components";
+import { getCollection } from "astro:content";
+import type { GetStaticPaths, Page } from "astro";
+import type { CollectionEntry } from "astro:content";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const projects = await getCollection("projects");
+  return paginate(projects, { pageSize: 6 });
+}) satisfies GetStaticPaths;
+
+interface Props {
+  page: Page<CollectionEntry<"projects">>;
+}
+
+const { page } = Astro.props;
+---
+
+<DefaultLayout
+  title="Portfolio"
+  description="An example of a portfolio using the Astro Content Collections."
+>
+  <section class="my-12">
+    <div class="space-content container">
+      <h1>Portfolio</h1>
+      <p class="text-2xl">
+        An example of a portfolio built using Astro Content Collections,
+        showcasing how to organize and display projects dynamically. Check out <a
+          href="https://docs.astro.build/en/guides/content-collections/"
+          >Astro Content Collections</a
+        > in the Astro Docs to learn more.
+      </p>
+    </div>
+  </section>
+  <section class="my-12">
+    <div class="container">
+      <p class="text-sm">
+        <em
+          >Project {page.start + 1} through {page.end + 1} of {page.total} total
+          projects</em
+        >
+      </p>
+      <ul class="my-3">
+        {
+          page.data.map((project) => (
+            <li class="mb-4">
+              <article>
+                <Media
+                  class="rounded-lg"
+                  src="https://images.unsplash.com/photo-1620428268482-cf1851a36764?auto=format&fit=crop&q=100&w=800"
+                  alt="Fundación Arquitectura y Ciudad"
+                />
+                <h3>{project.data.title}</h3>
+                <p>{project.data.description}</p>
+                <a class="button" href={project.data.link}>
+                  Visit site
+                </a>
+              </article>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="mt-12 grid place-content-center">
+        <Pagination
+          firstPage={page.url.prev ? "/portafolio" : null}
+          previousPage={page.url.prev ? page.url.prev : null}
+          nextPage={page.url.next ? page.url.next : null}
+          lastPage={page.url.next
+            ? `/portfolio/${Math.ceil(page.total / page.size)}`
+            : null}
+          currentPage={page.currentPage}
+          totalPages={Math.ceil(page.total / page.size)}
+        />
+      </div>
+    </div>
+  </section>
+</DefaultLayout>
+
+<style lang="scss">
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 4rem;
+
+    @media (min-width: 550px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 2rem;
+    }
+
+    @media (min-width: 950px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  article {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #000;
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+</style>
