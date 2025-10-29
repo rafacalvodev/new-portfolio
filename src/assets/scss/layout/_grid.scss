@@ -1,6 +1,11 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-gap: 2em;
-  margin: 2rem 0;
+  grid-gap: 1rem;
+  --minimun: 20ch;
+}
+
+@supports (width: min(var(--minimun), 100%)) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--minimun), 100%), 1fr));
+  }
 }

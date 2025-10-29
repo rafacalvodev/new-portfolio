@@ -1,19 +1,17 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
-import Hero from "../components/Hero.astro";
+import HomeHero from "../components/HomeHero.astro";
 import HomeServices from "../components/HomeServices.astro";
 import HomeProjects from "../components/HomeProjects.astro";
 import HomeAbout from "../components/HomeAbout.astro";
-import CTA from "../components/CTA.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// import CTA from "../components/CTA.astro";
+import ContactSection from "../components/page/ContactSection.astro";
 ---
 
 <DefaultLayout>
-  <Hero />
+  <HomeHero />
   <HomeServices />
   <HomeAbout />
   <HomeProjects />
-  <CTA />
+  <ContactSection />
 </DefaultLayout>

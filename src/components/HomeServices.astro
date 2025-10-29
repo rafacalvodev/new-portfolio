@@ -1,56 +1,100 @@
+---
+import WebIcon from "../assets/icons/services/CarbonDevices.svg";
+import StoreIcon from "../assets/icons/services/CarbonShoppingCart.svg";
+import SearchIcon from "../assets/icons/services/CarbonQuery.svg";
+import ToolIcon from "../assets/icons/services/CarbonToolKit.svg";
+---
+
+
 <section id="servicios" class="home-section">
-  <div class="container">
-    <h2>Esto es lo que ofrezco:</h2>
-    <div>
+  <div class="container | flow">
+    <div class="home-section__header | flow">
+      <h2>Esto es lo que ofrezco:</h2>
+      <p>Mis servicios web se agrupan en 4 soluciones base, diseñadas para ajustarse a lo que necesitas. Considera el contenido como un punto de partida: puedes modificarlo completamente, añadiendo o eliminando funcionalidades y características según tus objetivos.</p> 
+    </div>
+    <div class="services-grid">
       <ul class="grid">
         <li>
-          <article>
-            <h3>Desarrollo Web</h3>
+          <article class=" card-1 cluster flow">
+            <div class="service-icon">
+              <WebIcon/>
+            </div>
+            <h3>Contratar Páginas Web</h3>
             <p>
               Diseño y desarrollo sitios web WordPress personalizados, desde
               landing pages hasta tiendas online completas, puedo crear el sitio
               web perfecto para tu negocio.
             </p>
+            <a href="/servicios/desarrollador-de-paginas-web" class="button">Más sobre web</a>
           </article>
         </li>
         <li>
-          <article>
-            <h3>Mantenimiento Web</h3>
+          <article class=" card-1 cluster flow">
+            <div class="service-icon">
+              <StoreIcon />
+            </div>
+            <h3>Contratar Tiendas Online</h3>
             <p>
               Me encargo de que tu sitio web esté siempre actualizado, seguro y
               funcionando a la perfección, para que puedas dedicarte a lo que
               realmente importa: tu negocio.
             </p>
+            <a href="/servicios/desarrollador-de-tiendas-online" class="button button-secondary">Más sobre Tiendas Online</a>
           </article>
         </li>
         <li>
-          <article>
-            <h3>Optimización</h3>
+          <article class=" card-1 cluster flow">
+            <div class="service-icon">
+              <SearchIcon />
+            </div>
+            <h3>Contratar Optimización SEO</h3>
             <p>
               Implemento estrategias probadas para que tu sitio web aparezca en
               los primeros resultados de búsqueda, atrayendo tráfico orgánico de
               calidad y potenciales clientes.
             </p>
+            <a href="/servicios/optimizacion-seo-y-posicionamiento" class="button">Más sobre SEO</a>
+          </article>
+        </li>
+        <li>
+          <article class=" card-1 cluster flow">
+            <div class="service-icon">
+              <ToolIcon />
+            </div>
+            <h3>Mantenimiento Web</h3>
+            <p>
+              Implemento estrategias probadas para que tu sitio web aparezca en
+              los primeros resultados de búsqueda, atrayendo tráfico orgánico de
+              calidad y potenciales clientes.
+            </p>
+            <a href="/servicios/mantenimiento-web" class="button button-secondary">Más de Mantenimiento</a>
           </article>
         </li>
       </ul>
     </div>
-    <div class="services-cta">
-      <a href="/desarrollo-web/" class="button">Desarrollo Web</a>
-      <a href="/contacto/" class="button color-secondary">Contacto</a>
-      <a href="/mantenimiento-web/" class="button">Mantenimiento Web</a>
-    </div>
+    
   </div>
 </section>
 
 <style>
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    align-items: stretch;
   }
 
-  article {
-    border: 3px solid light-dark(hsl(0 0% 10%), hsl(0 0% 90%));
-    border-radius: 0.5em;
-    padding: 1em;
+  .cluster {
+    align-items: stretch;
+  }
+
+  .service-icon {
+    svg {
+      max-width: 100%;
+      width: 5em;
+      height: 5em;
+      /* fill: var(--alert-100); */
+
+      path, circle {
+        fill: var(--alert-100);
+      }
+    }
   }
 </style>

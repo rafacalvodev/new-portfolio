@@ -6,7 +6,7 @@ import Footer from "../components/Footer.astro";
 import { SkipLink } from "accessible-astro-components";
 
 const {
-  title = "Astro",
+  title = "Rafael Calvo",
   description = "A starter project with accessibility features using Astro static site builder. Contains accessible landmarks, skip links, a dark mode color scheme, better focus outline and keyboard menu navigation.",
   url = Astro.site,
   image = "social-preview-image.png",
@@ -14,7 +14,7 @@ const {
 } = Astro.props;
 ---
 
-<html lang="en" dir="ltr">
+<html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -48,7 +48,11 @@ const {
         --font-family-default: system-ui, sans-serif;
         --font-family-special: system-ui, sans-serif;
         // light theme
-        --font-color: var(--dark-100);
+        --font-color: var(--dark-200);
+        --header-color: var(--neutral-100);
+        --header-bg: var(--secondary-300);
+        --footer-color: var(--neutral-100);
+        --footer-bg: var(--secondary-300);
         --action-color: var(--primary-300);
         --action-color-state: var(--primary-500);
         --background: var(--neutral-100);
@@ -65,6 +69,8 @@ const {
         --action-color: var(--secondary-100);
         --action-color-state: var(--secondary-500);
         --background: var(--dark-200);
+        --header-bg: var(--background);
+        --footer-bg: var(--background);
         --primary-background: var(--primary-500);
         --neutral-background: var(--neutral-900);
         --border-color-subtle: var(--neutral-600);

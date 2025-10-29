@@ -9,8 +9,8 @@
   text-decoration: none;
   text-align: center;
   color: var(--neutral-900);
-  background-color: var(--primary-100);
-  border: 3px solid var(--primary-100);
+  background-color: var(--primary-300);
+  border: 3px solid var(--primary-300);
   border-radius: 0.2em;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 
@@ -26,14 +26,14 @@
   //   color: var(--neutral-900);
   // }
 
-  &.color-secondary {
+  &.button-secondary {
     background-color: var(--alert-100);
     border-color: (var(--alert-100));
 
     &:hover,
     &:focus {
-      background-color: var(--alert-500);
-      border-color: var(--alert-500);
+      background-color: var(--alert-400);
+      border-color: var(--alert-400);
     }
   }
 

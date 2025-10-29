@@ -1,0 +1,88 @@
+<section class="contact-section">
+  <div class="container">
+    <div class="grid">
+      <div class="contact-section__text | flow">
+        <h2>Contratar servicios de Programador Web</h2>
+        <p>
+          ¿Quieres pedir presupuesto para crear una página web o tienda online? ¿Quieres otro servicio web?
+        </p>
+        <p>
+          Rellena el formulario de contacto, marcando los servicios a contratar y explicando con el máximo detalle tus necesidades (nº de secciones, idiomas, sector, etc).
+        </p>
+        <p>
+          Si aún tienes dudas al contratar mis servicios de programador web freelance, igualmente puedes preguntarme cualquier consulta rellenando el formulario.
+        </p>
+      </div>
+      <div class="contact-section__form">
+        <h3>Contacto:</h3>
+        <form name="contact" method="POST" data-netlify="true" class="form flow">
+          <div>
+            <label>Nombre: </label>
+            <input type="text" name="name" />
+          </div>
+          <div>
+            <label>Email: </label>
+            <input type="email" name="email" />
+          </div>
+          <fieldset>
+            <legend>¿Con qué te puedo ayudar?</legend>
+            <ul>
+              <li>
+                <input type="checkbox" id="website" name="website" value="Página Web">
+                <label for="website">Página Web</label>
+              </li>
+              <li>
+                <input type="checkbox" id="ecommerce" name="ecommerce" value="Tienda Online">
+                <label for="ecommerce">Tienda Online</label>
+              </li>
+              <li>
+                <input type="checkbox" id="optimize" name="optimize" value="Optimización">
+                <label for="optimize">Optimización Web</label>
+              </li>
+              <li>
+                <input type="checkbox" id="maintenance" name="maintenance" value="Mantenimiento">
+                <label for="maintenance">Mantenimiento Web</label>
+              </li>
+            </ul>           
+          </fieldset>
+          <div>
+            <label>Cuentame de qué va tu proyecto/idea:</label>
+            <textarea name="message"></textarea>
+          </div>
+          <div>
+            <button class="button" type="submit">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .contact-section {
+    padding-block: var(--space-l);
+    background-color: var(--alert-100);
+    color: var(--dark-200);
+  }
+
+  .form{
+    label, legend {
+      font-weight: 600;
+    }
+
+    ul {
+      margin-inline: 0;
+    }
+
+    li {
+      list-style: none;
+      label{
+        font-weight: 500;
+      }
+    }
+
+    input, textarea {
+      background-color: var(--neutral-100);
+    }
+  }
+</style>

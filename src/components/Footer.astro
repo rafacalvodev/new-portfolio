@@ -1,20 +1,126 @@
 ---
 // import CallToAction from "./CallToAction.astro";
-
+import Logo from '../assets/img/rafael-calvo-desarrollador-web-freelance-logo.svg';
+import GithubIcon from '../assets/icons/social-media/CarbonLogoGithub.svg';
+import LinkedinIcon from '../assets/icons/social-media/CarbonLogoLinkedin.svg';
+import InstagramIcon from '../assets/icons/social-media/CarbonLogoInstagram.svg';
 const currentYear = new Date().getFullYear();
 ---
 
-<footer>
-  <!-- <CallToAction /> -->
-  <section class="py-8">
-    <div class="container">
-      <p>
-        &copy; {currentYear} - Starter Theme for <a href="https://astro.build/"
-          >Astro</a
-        >. Made with ❤️ by <a href="https://github.com/markteekman"
-          >Mark Teekman</a
-        >.
-      </p>
+<footer class="footer">
+  <div class="container">
+    <div class="grid | footer__grid">
+      <div class="flow | footer__contact">
+        <a href="/" class="footer-logo">
+          <Logo class="logo"/>
+          <span>Desarrollador Web Freelance</span>
+        </a> 
+        <div class="footer__mail">
+          <h4>Si tienes alguna duda o consulta, puedes escribir a:</h4>
+          <a href="mailto:rafacalvodev@gmail.com">rafacalvodev@gmail.com</a>
+        </div>
+        <div class="footer__social">
+          <h4>O puedes encontrarme en:</h4>
+          <ul class="flex">
+            <li><a href="https://github.com/rafacalvodev"><GithubIcon/></a></li>
+            <li><a href="https://www.linkedin.com/in/rafacalvodev/"><LinkedinIcon/></a></li>
+            <li><a href="https://www.instagram.com/rafacalvodev/"><InstagramIcon/></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flow | footer__links">
+        <h3>Enlaces de interés</h3>
+        <ul class="flow">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/portafolio/">Portafolio</a></li>
+          <li><a href="/servicios/desarrollador-de-paginas-web/">Creación de Páginas Web</a></li>
+          <li><a href="/servicios/desarrollador-de-tiendas-online/">Creación de Tiendas Online</a></li>
+          <li><a href="/servicios/optimizacion-seo-y-posicionamiento/">SEO y Optimización Web</a></li>
+          <li><a href="/servicios/mantenimiento-web/">Mantenimiento Web</a></li>
+          <li><a href="/contacto/">Contacto</a></li>
+        </ul>
+      </div>
     </div>
-  </section>
+  </div>
+  <div class="footer__copy">
+    <p>
+      &copy; {currentYear} - Rafael Calvo, desarrollador Web Freelance. Sitio web hecho con ☕ y <a href="https://astro.build/"
+        >Astro</a
+      >.
+    </p>
+  </div>
 </footer>
+
+
+<style lang="scss">
+  .footer {
+    background-color: var(--footer-bg);
+    padding-block-start: var(--space-xs-s);
+    border-top: 0.3em solid var(--primary-300);
+    color: var(--footer-color);
+
+    ul {
+      margin: none;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .footer-logo {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.2em;
+
+      svg {
+        width: 20em;
+        height: auto;
+      }
+    }
+
+    &__contact {
+      --flow-spacer: 2rem;
+    }
+
+    &__mail {
+      a {
+        //font-size: var(--step-1);
+        font-weight: 600;
+        color: var(--alert-100);
+      }
+    }
+
+    &__social {
+      .flex {
+        justify-content: flex-start;
+      }
+
+      svg {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+
+    &__links {
+      a {
+        font-weight: 600;
+      }
+    }
+
+    &__copy {
+      text-align: center;
+      padding-block: var(--space-m-l);
+
+      a {
+        color: var(--alert-100);
+        font-weight: 600;
+        text-decoration: solid;
+      }
+    }
+  }
+</style>

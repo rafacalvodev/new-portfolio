@@ -6,61 +6,79 @@ import {
   TabsPanel,
   Media,
 } from "accessible-astro-components";
+import { Image } from 'astro:assets';
+import WordpressIcon from "../assets/icons/stack/wordpress.png";
+import PhpIcon from "../assets/icons/stack/php.png";
+import HTMLIcon from "../assets/icons/stack/html.png";
+import CSSIcon from "../assets/icons/stack/css.png";
+import AstroIcon from "../assets/icons/stack/astro-logo-light-gradient.svg";
+import JSIcon from "../assets/icons/stack/js.png";
+import RafaImg from "../assets/img/rafa2024.png";
 ---
 
-<section class="home-section" id="sobre-mi">
+<section class="home-section | about-section" id="sobre-mi">
   <div class="container">
-    <h2>Algo sobre mí</h2>
     <div class="grid">
-      <Tabs>
-        <TabsList>
-          <TabsTab id="tab-1" controls="panel-1" selected>First Panel</TabsTab>
-          <TabsTab id="tab-2" controls="panel-2">Second Panel</TabsTab>
-        </TabsList>
-
-        <TabsPanel id="panel-1" labelledby="tab-1" selected>
-          <h3>First Panel</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-            quasi nobis optio? Qui in quo accusantium debitis sapiente obcaecati
-            magnam incidunt sit. Molestiae exercitationem quibusdam quod
-            veritatis laboriosam est tenetur. Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Sed eveniet quidem earum at nobis
-            enim.
-          </p>
-          <a href="#">Tab to me!</a>
-        </TabsPanel>
-        <TabsPanel id="panel-2" labelledby="tab-2">
-          <h3>Second Panel</h3>
-          <div class="">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
-              ratione aliquid perferendis consectetur iusto cumque deserunt odio
-              accusamus? Numquam nulla at dolore iure dignissimos earum magni
-              laborum blanditiis sunt, alias aut ea officia aliquam accusamus.
-            </p>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-            quasi nobis optio? Qui in quo accusantium debitis sapiente obcaecati
-            magnam incidunt sit. Molestiae exercitationem quibusdam quod
-            veritatis laboriosam est tenetur. Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Sed eveniet quidem earum at nobis
-            enim.
-          </p>
-          <a href="#">Tab to me!</a>
-        </TabsPanel>
-      </Tabs>
+      <div class="about-section__text | flow">
+        <h2>Algo sobre mí</h2>
+        <p>
+        ¡Hola! Soy Rafa, soy un desarrollador web freelance de Caracas, Venezuela. Trabajo con WordPress como mi herramienta principal y disfruto trabajar con clientes que quieren convertir sus ideas en realidad y quieren iniciar su viaje en la web.
+        </p>
+        <p>
+          Todo empezó cuando me hicieron la pregunta «Rafa, ¿sabe hacer páginas web?» y yo inicialmente no sabía pero aún así dije que sí. Luego, gracias a mi curiosidad y prisa, me adentré en el mundo del desarrollo web, primero con el armador de blogs de WordPress y después haciendo plantillas con HTML, CSS y JavaScript.
+        </p>
+        <p>
+          Ahora trabajo como desarrollador freelance con pequeños negocios y emprendimientos haciendo páginas tipo landing page y sitios web robustos, siempre cumpliendo con las mejores prácticas en la web.
+        </p>
+        <!-- <div class="tech-stack | flow">
+          <h3>Mi Stack</h3>
+          <ul class="grid">
+            <li><Image src={WordpressIcon} alt="Logo de Wordpress" /></li>
+            <li><Image src={PhpIcon} alt="Logo de PHP" /></li>
+            <li><Image src={HTMLIcon} alt="Logo de HTML" /></li>
+            <li><Image src={CSSIcon} alt="Logo de Wordpress" /></li>
+            <li><Image src={JSIcon} alt="Logo de Wordpress" /></li>
+            <li><AstroIcon /></li>
+          </ul>
+        </div> -->
+      </div>
       <Media
-        class="rounded-lg"
-        src="https://images.unsplash.com/photo-1636819488537-a9b1ffb315ce?auto=format&fit=crop&w=800&q=100"
+        class="about-section__image | flex"
+        src="src/assets/img/rafa2024.png"
       />
     </div>
   </div>
 </section>
 
-<style>
-  .tab {
-    padding: 1em;
+<style lang="scss">
+  .about-section {
+    .grid{
+      align-items: center;
+    }
+  }
+  .about-section__image {
+      .flex {
+        justify-content: center;
+      }
+
+      img {
+        width: 50%;
+      }
+    }
+
+  .tech-stack {
+    .grid{
+      --minimun: 14ch;
+    }
+
+    img {
+      width: auto;
+      height: 64px;
+    }
+
+    svg {
+      fill: currentColor;
+      path: currentColor;
+    }
   }
 </style>

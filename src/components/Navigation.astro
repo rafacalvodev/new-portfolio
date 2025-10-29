@@ -11,10 +11,10 @@ import Logo from '../assets/img/rafael-calvo-desarrollador-web-freelance-logo.sv
 
 <div id="main-navigation" class="container">
   <div class="cluster">
-    <div class="nav-logo">
-      <Logo class="logo"/>
-      <span>Desarrollador Web Freelance</span>
-    </div>
+      <a href="/" class="nav-logo">
+        <Logo class="logo"/>
+        <span>Desarrollador Web Freelance</span>
+      </a>   
     
       <nav class="desktop-menu" aria-label="Main navigation desktop">
         <ul class="menu">
@@ -49,10 +49,10 @@ import Logo from '../assets/img/rafael-calvo-desarrollador-web-freelance-logo.sv
         const menuItems = [...menu.querySelectorAll('a:not([rel*="external"])')] as HTMLAnchorElement[]
 
         menuItems.forEach((menuItem) => {
-          if (currentPathname.includes(menuItem.pathname.replaceAll('/', '')) && menuItem.textContent !== 'Home') {
+          if (currentPathname.includes(menuItem.pathname.replaceAll('/', '')) && menuItem.textContent !== 'Inicio') {
             menuItem.classList.add('is-active')
             menuItem.setAttribute('aria-current', 'page')
-          } else if (menuItem.textContent === 'Home' && currentPathname === '/') {
+          } else if (menuItem.textContent === 'Inicio' && currentPathname === '/') {
             menuItem.classList.add('is-active')
             menuItem.setAttribute('aria-current', 'page')
           }
@@ -221,8 +221,8 @@ import Logo from '../assets/img/rafael-calvo-desarrollador-web-freelance-logo.sv
   @use '../assets/scss/abstracts/breakpoints.scss' as *;
 
   #main-navigation {
-    a {
-      color: var(--font-color);
+    a, button, span {
+      color: var(--header-color);
     }
 
     .nav-logo {
@@ -230,10 +230,11 @@ import Logo from '../assets/img/rafael-calvo-desarrollador-web-freelance-logo.sv
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      gap: 0;
+      gap: 0.1em;
 
       span {
         font-size: clamp(0.875rem, 0.7727rem + 0.4545vw, 1.125rem);
+        line-height: 1;
       }
     }
 
