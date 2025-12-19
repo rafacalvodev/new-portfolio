@@ -1,0 +1,16 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import ServiceBanner from "../../components/page/PageBanner.astro";
+---
+
+<DefaultLayout>
+  <ServiceBanner title="Desarrollo web de sitios personales y corporativos" description="¿Estás buscando un desarrollador o servicio para crear tu sitio web? Pues, ¡estas en el lugar correcto!" class="yellow-bg" />
+</DefaultLayout>
+
+<style lang="scss">
+  @use '../../assets/scss/abstracts/colors.scss' as *;
+  .yellow-bg {
+    background-color: hsl(115, 65%, 54%);
+    color: var(--neutral-900);
+  }
+</style>

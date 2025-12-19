@@ -1,43 +1,40 @@
-@use 'sass:map';
+@use "sass:map";
 
 // | -------------------------------------------------------------
 // | Breakpoint
 // | -------------------------------------------------------------
 
 $breakpoints: (
-  'default': 0,
-  'small': 24em,
-  'medium': 48em,
-  'large': 75em,
-  'nav': 70em,
-  ) !default;
+  "default": 0,
+  "x-small": 12em,
+  "small": 24em,
+  "medium": 48em,
+  "large": 75em,
+  "nav": 70em,
+) !default;
 
 @mixin breakpoint($breakpoint) {
   @if map.has-key($breakpoints, $breakpoint) {
     @media (min-width: map.get($breakpoints, $breakpoint)) {
       @content;
     }
-  }
-
-  @else if (type_of($breakpoint)==number) {
-    @media (min-width: $breakpoint+'px') {
+  } @else if (type_of($breakpoint) ==number) {
+    @media (min-width: $breakpoint+"px") {
       @content;
     }
-  }
-
-  @else {
+  } @else {
     @error "Not a correct value, check _base-breakpoints for available values.";
   }
 }
 
 $breakpoints: (
-  'default': 0,
-  'xs': 320px,
-  's': 480px,
-  'm': 768px,
-  'l': 1024px,
-  'xl': 1280px,
-  '2xl': 1536px,
+  "default": 0,
+  "xs": 320px,
+  "s": 480px,
+  "m": 768px,
+  "l": 1024px,
+  "xl": 1280px,
+  "2xl": 1536px,
   // 'nav': 1000px,
 ) !default;
 

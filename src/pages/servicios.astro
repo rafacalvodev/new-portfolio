@@ -1,13 +1,143 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
-import PageHeader from "../components/PageHeader.astro";
-import CTA from "../components/CTA.astro";
+import PageBanner from "../components/page/PageBanner.astro";
+import HomeServices from "../components/HomeServices.astro";
+import ContactSection from "../components/page/ContactSection.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import ChatIcon from "../assets/icons/services/CarbonChat.svg";
+import SecurityIcon from "../assets/icons/services/CarbonIbmCloudKeyProtect.svg";
+import MaintenanceIcon from "../assets/icons/services/CarbonCloudServiceManagement.svg";
+import SocialIcon from "../assets/icons/services/CarbonNetwork2.svg";
+import MailIcon from "../assets/icons/services/CarbonMailAll.svg";
 ---
 
 <DefaultLayout>
-  <PageHeader />
-  <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima facere soluta optio.</h1>
+  <PageBanner title="Servicios de Desarrollador Web." description="Hago Páginas Web, Tiendas Online, SEO, Mantenimiento Web y más. Para empresas, consultorías, profesionales autónomos y particulares." class="bg-cyan"/>
+  <HomeServices title="Principales servicios que ofrezco como Programador Web" />
+  <section class="page-section | extra-services">
+    <div class="container">
+      <div class="flow">
+        <h2>Servicios adicionales.</h2>
+        <p>Otros servicios que puedo ofrecer y puedes agregar a tu sitio web son:</p>
+        <div class="grid">
+          <div class="left-col">
+            <ul class="flow | extra-services__list">
+              <li>
+                <article class="flow">
+                  <header class="flex | extra-services__header">
+                    <div class="service-icon">
+                      <ChatIcon />
+                    </div>
+                    <h3>Integración de Chats y ChatBots:</h3>
+                  </header>
+                  <ul>
+                    <li>Chat WhatsApp mediante botón flotante.</li>
+                    <li>Chat en vivo para hablar con tus clientes.</li>
+                    <li>Integración de un ChatBot con respuestas automáticas.</li>
+                  </ul>
+                </article>
+              </li>
+              <li>
+                <article class="flow">
+                  <header class="flex | extra-services__header">
+                    <div class="service-icon">
+                      <MaintenanceIcon />
+                    </div>
+                    <h3>Mantenimiento del sitio web:</h3>
+                  </header>
+                  <ul>
+                    <li>Cambios de contenidos y secciones.</li>
+                    <li>Limpieza de SPAM.</li>
+                    <li>Solución a problemas con el funcionamiento web (errores de PHP o de visualización, etc).</li>
+                    <li>Levantamiento de las caídas de tu hosting o servidor.</li>
+                    <li>Mantenimiento mensual para tu web o cambios puntuales.</li>
+                  </ul>
+                </article>
+              </li>
+              <li>
+                <article class="flow">
+                  <header class="flex | extra-services__header">
+                    <div class="service-icon">
+                      <MailIcon />
+                    </div>
+                    <h3>Creación de Boletines/Newsletters:</h3>
+                  </header>
+                  <ul>
+                    <li>Diseño de newsletters.</li>
+                    <li>Maquetación de newsletters en HTML5.</li>
+                    <li>Creación, gestión y envío de newsletters en MailChimp.</li>
+                    <li>Integración de tu web con MailChimp.</li>
+                    <li>Integración de tu web WordPress con MailPoet.</li>
+                    <li>Newsletters automáticos.</li>
+                    <li>Reporte de resultados del newsletter enviado (bajas, rebotes, aperturas, etc).</li>
+                  </ul>
+                </article>
+              </li>
+            </ul>
+          </div>
+          <div class="right-col">
+            <ul class="flow |extra-services__list">
+              <li>
+                <article class="flow">
+                  <header class="flex | extra-services__header">
+                    <div class="service-icon">
+                      <SecurityIcon />
+                    </div>
+                    <h3>Mejoras de Seguridad Web:</h3>
+                  </header>
+                  <ul>
+                    <li>Seguridad con certificados SSL/HTTPS.</li>
+                    <li>Actualización de WorPress, WooCommerce, Plugins y Themes a últimas versiones.</li>
+                    <li>Actualización de seguridad con nuevas versiones de PHP.</li>
+                    <li>Copias de seguridad (backups) completas de archivos y bases de datos.</li>
+                    <li>Instalación de reCAPTCHA para evitar correos no deseados y SPAM.</li>
+                  </ul>
+                </article>
+              </li>
+              <li>
+                <article class="flow">
+                  <header class="flex | extra-services__header">
+                    <div class="service-icon">
+                      <SocialIcon />
+                    </div>
+                    <h3>Artículos en redes sociales:</h3>
+                  </header>
+                  <ul>
+                    <li>Alta de artículos y noticias en tu blog.</li>
+                    <li>Publicación de tus artículos en redes sociales.</li>
+                    <li>Integración de tu web con las redes sociales, botones de me gusta y compartir.</li>
+                  </ul>
+                </article>
+              </li> 
+              <li>
+                <article class="flow">
+                  <header class="flex | extra-services__header">
+                    <div class="service-icon">
+                      <SocialIcon />
+                    </div>
+                    <h3>Servicios adicionales:</h3>
+                  </header>
+                  <ul>
+                    <li>Alta de artículos y noticias en tu blog.</li>
+                    <li>Publicación de tus artículos en redes sociales.</li>
+                    <li>Integración de tu web con las redes sociales, botones de me gusta y compartir.</li>
+                  </ul>
+                </article>
+              </li> 
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <ContactSection />  
 </DefaultLayout>
+
+<style lang="scss">
+  @use '../assets/scss/abstracts/colors.scss' as *;
+
+  .bg-cyan {
+    background-color: hsl(180, 100%, 65%);
+    color: var(--dark-200);
+  }
+</style>

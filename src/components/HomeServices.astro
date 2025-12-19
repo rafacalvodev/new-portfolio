@@ -9,7 +9,7 @@ import ToolIcon from "../assets/icons/services/CarbonToolKit.svg";
 <section id="servicios" class="home-section">
   <div class="container | flow">
     <div class="home-section__header | flow">
-      <h2>Esto es lo que ofrezco:</h2>
+      {Astro.props.title && <h2>{Astro.props.title}</h2>}
       <p>Mis servicios web se agrupan en 4 soluciones base, diseñadas para ajustarse a lo que necesitas. Considera el contenido como un punto de partida: puedes modificarlo completamente, añadiendo o eliminando funcionalidades y características según tus objetivos.</p> 
     </div>
     <div class="services-grid">

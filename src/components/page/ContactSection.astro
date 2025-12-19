@@ -1,4 +1,4 @@
-<section class="contact-section">
+<section id="contact" class="contact-section">
   <div class="container">
     <div class="grid">
       <div class="contact-section__text | flow">
@@ -43,6 +43,10 @@
                 <input type="checkbox" id="maintenance" name="maintenance" value="Mantenimiento">
                 <label for="maintenance">Mantenimiento Web</label>
               </li>
+              <li>
+                <input type="checkbox" id="doubt" name="doubt" value="No estoy seguro/a.">
+                <label for="doubt">No estoy seguro/a.</label>
+              </li>
             </ul>           
           </fieldset>
           <div>
@@ -60,6 +64,7 @@
 
 <style lang="scss">
   .contact-section {
+    margin-block-start: var(--space-3xl);
     padding-block: var(--space-l);
     background-color: var(--alert-100);
     color: var(--dark-200);
