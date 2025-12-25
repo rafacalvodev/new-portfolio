@@ -6,7 +6,6 @@
 @use "../abstracts" as *;
 
 :root {
-  
   color-scheme: light dark;
   interpolate-size: allow-keywords;
 
@@ -15,9 +14,9 @@
       --#{$color}-#{$shade}: #{$value};
     }
   }
-  
+
   @include breakpoint(medium) {
-    --section-spacing: 7rem;
+    --section-spacing: 6rem;
   }
 
   --container-width: clamp(16rem, 93vw, 85rem);

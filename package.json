@@ -9,11 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.7",
+    "@astrojs/mdx": "^4.3.13",
     "@iconify-json/lucide": "^1.2.68",
     "@lucide/astro": "^0.544.0",
     "accessible-astro-components": "^5.0.1",
-    "astro": "^5.14.6",
+    "astro": "^5.16.6",
     "astro-icon": "^1.1.5",
     "sass": "^1.93.2"
   }
