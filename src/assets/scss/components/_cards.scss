@@ -18,4 +18,15 @@
       height: 1.3em;
     }
   }
+
+  summary {
+    cursor: pointer;
+    font-size: var(--step-1);
+    font-weight: 700;
+
+    &::marker {
+      font-size: 1.5rem;
+      color: var(--primary-300);
+    }
+  }
 }

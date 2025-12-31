@@ -1,0 +1,41 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import ServiceBanner from "../../components/page/PageBanner.astro";
+import ContactSection from "../../components/page/ContactSection.astro";
+---
+
+<DefaultLayout class:list="seo-page">
+	<ServiceBanner
+		title="Servicios SEO, Optimización y Posicionamiento Web en Google"
+		description="Mejora la visibilidad de tu sitio web en los motores de búsqueda con nuestras estrategias de SEO personalizadas."
+		class:list="light-cyan-bg"
+	/>
+
+	<section class="container mx-auto px-4 py-12">
+		<h2>¿Por qué es importante el SEO?</h2>
+		<p>
+			En el mundo digital actual, tener una presencia en línea sólida es crucial para el éxito de cualquier negocio. El SEO (Search Engine Optimization) ayuda a mejorar la visibilidad de tu sitio web en los motores de búsqueda, lo que puede aumentar el tráfico orgánico y atraer a más clientes potenciales.
+		</p>
+		<h3 class="text-2xl font-semibold mb-4">Nuestros Servicios de Optimización SEO</h3>
+		<ul class="list-disc list-inside mb-6">
+			<li>Auditoría SEO completa</li>
+			<li>Investigación de palabras clave</li>
+			<li>Optimización on-page y off-page</li>
+			<li>Creación de contenido optimizado</li>
+			<li>Monitoreo y análisis de rendimiento</li>
+		</ul>
+		<p>
+			Nuestro equipo de expertos en SEO trabajará contigo para desarrollar una estrategia personalizada que se adapte a las necesidades específicas de tu negocio y te ayude a alcanzar tus objetivos en línea.
+		</p>
+	</section>
+
+	<ContactSection />
+</DefaultLayout>
+
+<style lang="scss">
+		@use '../../assets/scss/abstracts/colors.scss' as *;
+		.light-cyan-bg {
+			background-color: #92EEF3;
+			color: var(--neutral-900);
+		}
+	</style>

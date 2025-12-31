@@ -12,6 +12,8 @@ const {
   image = "social-preview-image.png",
   author = "Rafael Calvo",
 } = Astro.props;
+
+const { class: className, ...rest } = Astro.props;
 ---
 
 <html lang="es" dir="ltr">
@@ -34,7 +36,7 @@ const {
   <body tabindex="-1">
     <SkipLink />
     <Header />
-    <main id="main-content" transition:animate="fade">
+    <main id="main-content" transition:animate="fade" class={className} {...rest}>
       <slot />
     </main>
     <Footer />

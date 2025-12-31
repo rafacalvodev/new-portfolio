@@ -2,6 +2,7 @@
   .grid {
     --minimun: 40ch;
   }
+
   details {
     padding: 1rem;
     border: 2px solid var(--alert-100);
@@ -9,10 +10,6 @@
   }
 
   summary {
-    /* Pin the custom marker to the container */
-    // position: relative;
-    /* Register summary as an anchor element */
-    // anchor-name: --summary;
     cursor: pointer;
     font-weight: 700;
 
@@ -20,39 +17,5 @@
       font-size: 1.5rem;
       color: var(--primary-300);
     }
-
-    // &::marker {
-    //   content: "";
-    // }
-
-    // &::before,
-    // &::after {
-    //   /* Custom marker dimensions */
-    //   content: "";
-    //   border-block-start: 4px solid var(--primary-300);
-    //   height: 0;
-    //   width: var(--step-1);
-    //   // border-radius: 3px;
-
-    //   /* Positions the lines */
-    //   inset-block-start: 50%;
-    //   inset-inline-end: 0;
-
-    //   /* Anchor the shape to the summary */
-    //   position: absolute;
-    //   position-anchor: --summary;
-    //   position-area: top end;
-    // }
-
-    // /* Rotate just the ::after line to create a "+"" shape */
-    // &::after {
-    //   transform: rotate(90deg);
-    //   transform-origin: 50%;
-    // }
   }
-
-  /* Rotate the line when open */
-  // details[open] summary::after {
-  //   transform: rotate(0deg);
-  // }
 }
