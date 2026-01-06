@@ -1,0 +1,23 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+.seo-page {
+  --section-spacing: var(--space-l);
+
+  .benefits {
+    ul {
+      list-style: disc;
+      padding-left: var(--space-s);
+    }
+  }
+
+  .grid {
+    --minimun: 40ch;
+    column-gap: 2rem;
+  }
+
+  .gray-bg {
+    color: var(--neutral-900);
+    background-color: var(--neutral-500);
+  }
+}
