@@ -1,11 +1,11 @@
 ---
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
-import ServiceBanner from "../../components/page/PageBanner.astro";
+import PageBanner from "../../components/page/PageBanner.astro";
 import ContactSection from "../../components/page/ContactSection.astro";
 ---
 
 <DefaultLayout class:list="seo-page">
-	<ServiceBanner
+	<PageBanner
 		title="Servicios SEO, Optimización y Posicionamiento Web en Google"
 		description="Mejora la visibilidad de tu sitio web en los motores de búsqueda con nuestras estrategias de SEO personalizadas."
 		class:list="light-cyan-bg"
@@ -177,7 +177,7 @@ import ContactSection from "../../components/page/ContactSection.astro";
 
 <style lang="scss">
 	@use '../../assets/scss/abstracts/colors.scss' as *;
-	
+
 	.light-cyan-bg {
 		background-color: #92EEF3;
 		color: var(--neutral-900);

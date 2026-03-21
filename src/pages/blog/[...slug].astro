@@ -1,0 +1,98 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<DefaultLayout
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.featuredImage || "/social-preview-image.png"}
+>
+  <div class="container flow">
+    <article>
+      <header class="flow">
+        <h1>{post.data.title}</h1>
+        <p class="description">{post.data.description}</p>
+        <div class="meta">
+          <time datetime={post.data.date.toISOString()}>
+            {post.data.date.toLocaleDateString()}
+          </time>
+          <span> • {post.data.readingTime} min read</span>
+        </div>
+        <div class="tags">
+          {post.data.tags.map((tag) => (
+            <span class="tag">{tag}</span>
+          ))}
+        </div>
+      </header>
+      <div class="prose">
+        <Content />
+      </div>
+    </article>
+  </div>
+</DefaultLayout>
+
+<style>
+  .description {
+    font-size: var(--step-1);
+    color: var(--text-color-secondary);
+    font-style: italic;
+  }
+
+  .meta {
+    font-size: 0.875rem;
+    color: var(--text-color-secondary);
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    background: var(--background-color-secondary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: var(--text-color-secondary);
+  }
+
+  .prose {
+    max-width: var(--font-measure);
+    line-height: 1.7;
+  }
+
+  .prose :global(h2) {
+    margin-top: 2rem;
+  }
+
+  .prose :global(p) {
+    margin-bottom: 1rem;
+  }
+
+  .prose :global(code) {
+    background: var(--background-color-secondary);
+    padding: 0.125rem 0.25rem;
+    border-radius: 3px;
+    font-family: monospace;
+  }
+
+  .prose :global(pre) {
+    background: var(--background-color-secondary);
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+  }
+</style>

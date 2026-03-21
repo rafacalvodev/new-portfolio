@@ -1,0 +1,38 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import PageBanner from "../../components/page/PageBanner.astro";
+import ContactSection from "../../components/page/ContactSection.astro";
+---
+
+<DefaultLayout class:list="maintenance-page">
+	<PageBanner
+		title="Mantenimiento y gestión de Wordpress y otras gestores de contenido"
+		description="¿Necesitas que un programador gestione y realice el mantenimiento mensual de tu página web? ¿NO TIENES TIEMPO o no sabes cómo actualizar tus contenidos? Este Servicio de Mantenimiento Web y Gestión es para ti."
+		class:list="light-purple-bg"
+	/>
+	<section class="page-section | benefits">
+		<div class="container">
+			<div class="flow">
+				<h2>¿Qué ventajas tendrás con el servicio de mantenimiento y gestión web mensual?</h2>
+				<p>Tu página web será más segura y te ahorrarás un tiempo valioso.</p>
+				<ul role="list" class="grid">
+					<li>Actualizaciones periódicas del CMS (WordPress, Joomla, Drupal, etc.) y de los plugins o extensiones instaladas.</li>
+					<li>Monitoreo de seguridad para proteger tu sitio contra amenazas y ataques.</li>
+					<li>Optimización del rendimiento para asegurar que tu sitio web cargue rápidamente.</li>
+					<li>Copias de seguridad regulares para proteger tus datos y facilitar la recuperación en caso de problemas.</li>
+					<li>Soporte técnico para resolver cualquier problema o duda que puedas tener.</li>
+					<li>Actualización y gestión de contenidos según tus indicaciones.</li>
+			</div>
+		</div>
+	</section>
+	<ContactSection />
+</DefaultLayout>
+
+<style lang="scss">
+	@use '../../assets/scss/abstracts/colors.scss' as *;
+
+	.light-purple-bg {
+		background-color: #bf65fc;
+		color: var(--neutral-900);
+	}
+</style>
