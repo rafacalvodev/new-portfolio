@@ -4,6 +4,7 @@ import { Pagination, Media } from "accessible-astro-components";
 import { getCollection } from "astro:content";
 import type { GetStaticPaths, Page } from "astro";
 import type { CollectionEntry } from "astro:content";
+import VisitSite from "../../assets/icons/misc/CarbonArrowUpRight.svg";
 
 export const getStaticPaths = (async ({ paginate }) => {
   const projects = await getCollection("projects");
@@ -21,10 +22,10 @@ const { page } = Astro.props;
   title="Portfolio"
   description="An example of a portfolio using the Astro Content Collections."
 >
-  <section class="my-12">
-    <div class="space-content container">
+  <section class="portfolio-header">
+    <div class="container | flow">
       <h1>Portfolio</h1>
-      <p class="text-2xl">
+      <p>
         An example of a portfolio built using Astro Content Collections,
         showcasing how to organize and display projects dynamically. Check out <a
           href="https://docs.astro.build/en/guides/content-collections/"
@@ -33,77 +34,65 @@ const { page } = Astro.props;
       </p>
     </div>
   </section>
-  <section class="my-12">
+  <section class="projects-section">
     <div class="container">
-      <p class="text-sm">
+      <!-- <p>
         <em
-          >Project {page.start + 1} through {page.end + 1} of {page.total} total
-          projects</em
+          >Project {page.start + 1} through {page.end + 1} of {page.total} total projects</em
         >
-      </p>
-      <ul class="my-3">
+      </p> -->
+      <ul class="grid">
         {
           page.data.map((project) => (
             <li class="mb-4">
-              <article>
-                <Media
-                  class="rounded-lg"
-                  src="https://images.unsplash.com/photo-1620428268482-cf1851a36764?auto=format&fit=crop&q=100&w=800"
-                  alt="Fundación Arquitectura y Ciudad"
-                />
+              <article class="card | flow">
+                {project.data.image && (
+                  <img
+                    src={`/projects/${project.data.image}`}
+                    alt={`${project.data.title} screenshot`}
+                  />
+                )}
                 <h3>{project.data.title}</h3>
-                <p>{project.data.description}</p>
+                <ul class="features-list | flow">
+                  {project.data.features.map((feature) => (
+                    <li>{feature}</li>
+                  ))}
+                </ul>
                 <a class="button" href={project.data.link}>
-                  Visit site
+                  Visitar sitio Web <VisitSite />
                 </a>
               </article>
             </li>
           ))
         }
       </ul>
-      <div class="mt-12 grid place-content-center">
-        <Pagination
-          firstPage={page.url.prev ? "/portafolio" : null}
-          previousPage={page.url.prev ? page.url.prev : null}
-          nextPage={page.url.next ? page.url.next : null}
-          lastPage={page.url.next
-            ? `/portfolio/${Math.ceil(page.total / page.size)}`
-            : null}
-          currentPage={page.currentPage}
-          totalPages={Math.ceil(page.total / page.size)}
-        />
-      </div>
     </div>
   </section>
+  <div id="pagination">
+    <div class="container flex">
+      <Pagination
+        firstPage={page.url.prev ? "/portafolio" : null}
+        previousPage={page.url.prev ? page.url.prev : null}
+        nextPage={page.url.next ? page.url.next : null}
+        lastPage={page.url.next
+          ? `/portfolio/${Math.ceil(page.total / page.size)}`
+          : null}
+        currentPage={page.currentPage}
+        totalPages={Math.ceil(page.total / page.size)}
+      />
+    </div>
+  </div>
 </DefaultLayout>
 
 <style lang="scss">
-  ul {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 4rem;
-
-    @media (min-width: 550px) {
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 2rem;
+  .projects-section {
+    .grid {
+      --minimun: 30ch;
     }
 
-    @media (min-width: 950px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  article {
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid #000;
-
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      margin-bottom: 1rem;
+    .features-list {
+      list-style-type: disc;
+      padding-left: 1em;
     }
   }
 </style>

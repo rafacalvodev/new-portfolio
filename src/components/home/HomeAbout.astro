@@ -1,0 +1,105 @@
+---
+import {
+  Tabs,
+  TabsList,
+  TabsTab,
+  TabsPanel,
+  Media,
+} from "accessible-astro-components";
+import { Image } from "astro:assets";
+import WordpressIcon from "../assets/icons/stack/wordpress.png";
+import PhpIcon from "../assets/icons/stack/php.png";
+import HTMLIcon from "../assets/icons/stack/html.png";
+import CSSIcon from "../assets/icons/stack/css.png";
+import AstroIcon from "../assets/icons/stack/astro-logo-light-gradient.svg";
+import JSIcon from "../assets/icons/stack/js.png";
+import { Picture } from "astro:assets";
+import RafaImg from "../../assets/img/rafa2024.png";
+---
+
+<section class="home-section | about-section" id="sobre-mi">
+  <div class="container">
+    <div class="grid">
+      <div class="about-section__text | flow">
+        <h2>Algo sobre mí</h2>
+        <p>
+          ¡Hola! Soy Rafa, soy un desarrollador web freelance de Caracas,
+          Venezuela. Trabajo con WordPress como mi herramienta principal y
+          disfruto trabajar con clientes que quieren convertir sus ideas en
+          realidad y quieren iniciar su viaje en la web.
+        </p>
+        <p>
+          Todo empezó cuando me hicieron la pregunta «Rafa, ¿sabe hacer páginas
+          web?» y yo inicialmente no sabía pero aún así dije que sí. Luego,
+          gracias a mi curiosidad y prisa, me adentré en el mundo del desarrollo
+          web, primero con el armador de blogs de WordPress y después haciendo
+          plantillas con HTML, CSS y JavaScript.
+        </p>
+        <p>
+          Ahora trabajo como desarrollador freelance con pequeños negocios y
+          emprendimientos haciendo páginas tipo landing page y sitios web
+          robustos, siempre cumpliendo con las mejores prácticas en la web.
+        </p>
+        <!-- <div class="tech-stack | flow">
+          <h3>Mi Stack</h3>
+          <ul class="grid">
+            <li><Image src={WordpressIcon} alt="Logo de Wordpress" /></li>
+            <li><Image src={PhpIcon} alt="Logo de PHP" /></li>
+            <li><Image src={HTMLIcon} alt="Logo de HTML" /></li>
+            <li><Image src={CSSIcon} alt="Logo de Wordpress" /></li>
+            <li><Image src={JSIcon} alt="Logo de Wordpress" /></li>
+            <li><AstroIcon /></li>
+          </ul>
+        </div> -->
+      </div>
+      <!-- <Media
+        class="about-section__image | flex"
+        src={RafaImg}
+      /> -->
+      <!-- <Image class="about-section__image | flex" src={RafaImg} alt="A description of my image." /> -->
+      <div class="about-section__image flex">
+        <Picture
+          src={RafaImg}
+          formats={["avif", "webp"]}
+          alt="A description of my image."
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .about-section {
+    .grid {
+      align-items: center;
+    }
+
+    .flex {
+      justify-content: center;
+    }
+  }
+
+  .about-section__image {
+    background: center / contain no-repeat url(../assets/img/circles-2-bg.svg);
+    img {
+      height: 24rem;
+      width: auto;
+    }
+  }
+
+  .tech-stack {
+    .grid {
+      --minimun: 14ch;
+    }
+
+    img {
+      width: auto;
+      height: 64px;
+    }
+
+    svg {
+      fill: currentColor;
+      path: currentColor;
+    }
+  }
+</style>

@@ -8,8 +8,8 @@ import { SkipLink } from "accessible-astro-components";
 const {
   title = "Rafael Calvo",
   description = "A starter project with accessibility features using Astro static site builder. Contains accessible landmarks, skip links, a dark mode color scheme, better focus outline and keyboard menu navigation.",
-  url = Astro.site,
-  image = "social-preview-image.png",
+  url = Astro.url?.href || Astro.site,
+  image = "/social-preview-image.png",
   author = "Rafael Calvo",
 } = Astro.props;
 

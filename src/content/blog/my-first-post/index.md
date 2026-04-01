@@ -4,7 +4,7 @@ date: 2023-10-01
 description: An introduction to my blog about web development and design.
 tags: ["web development", "introduction"]
 readingTime: 3
-featuredImage: https://images.unsplash.com/photo-1486312338219-ce68e2c6f44d?w=800&h=400&fit=crop
+featuredImage: https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=400&fit=crop
 ---
 
 # Welcome to My Blog

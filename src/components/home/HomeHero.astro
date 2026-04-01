@@ -1,0 +1,38 @@
+---
+import HomeHeroImage from "./HomeHeroImage.astro";
+---
+
+<div class="container">
+  <section class="hero grid">
+    <div class="hero__text | flow">
+      <h1>
+        Tu Negocio en Línea, Sin Complejos. Rápido, Accesible y Listo para
+        Crecer.
+      </h1>
+      <p>
+        Olvídate de la tecnología. Yo me encargo de construir una plataforma
+        digital profesional, fácil de manejar y optimizada para que tus clientes
+        te encuentren sin importar dónde estén.
+      </p>
+      <div class="home-buttons">
+        <a href="#servicios" class="button button-primary">Servicios</a>
+        <a href="#contacto" class="button button-secondary">
+          Ponerse en Contacto</a
+        >
+      </div>
+    </div>
+    <div class="hero__img">
+      <HomeHeroImage />
+    </div>
+  </section>
+</div>
+
+<style>
+  .hero {
+    margin: 5rem 0;
+  }
+
+  .grid {
+    align-items: center;
+  }
+</style>

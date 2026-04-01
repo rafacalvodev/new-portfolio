@@ -1,8 +1,13 @@
 ---
-title: Scorephix
-author: John Doe
+title: Gordo Aviation
+author: Rafael Calvo
 description: A comprehensive smart home solution designed specifically for users with visual impairments, featuring voice-first interactions and haptic feedback
-link: https://scorephix.com
+features:
+  - Voice-first interactions
+  - Haptic feedback
+  - Accessible design for visually impaired users
+  - Smart home integration
+link: https://gordoaviation.com/
 featured: false
 ---
 

@@ -1,0 +1,61 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "astro:assets";
+import VisitSite from "../../assets/icons/misc/CarbonArrowUpRight.svg";
+
+const projects = await getCollection("projects");
+const featuredProjects = projects.filter((project) => project.data.featured);
+---
+
+<section class="home-section | projects-section">
+  <div class="container">
+    <div class="home-section__header | flow">
+      <h2>Algunos de los proyectos en los que he trabajado</h2>
+      <p></p>
+    </div>
+    <ul class="grid">
+      {
+        featuredProjects.map((project) => (
+          <li>
+            <article class="card flow">
+              {project.data.image && (
+                <img
+                  src={`/projects/${project.data.image}`}
+                  alt={`${project.data.title} screenshot`}
+                />
+              )}
+              <h3>{project.data.title}</h3>
+              <ul class="features-list | flow">
+                {project.data.features.map((feature) => (
+                  <li>{feature}</li>
+                ))}
+              </ul>
+              <a class="button" href={project.data.link} target="_blank">
+                Visitar sitio Web <VisitSite />
+              </a>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style lang="scss">
+  .projects-section {
+    .grid {
+      --minimun: 40ch;
+    }
+
+    img {
+      aspect-ratio: auto;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .features-list {
+      list-style-type: disc;
+      padding-left: 1em;
+    }
+  }
+</style>

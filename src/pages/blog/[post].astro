@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { post: post.slug },
     props: { post },
   }));
 }
@@ -19,9 +19,9 @@ const { Content } = await post.render();
   description={post.data.description}
   image={post.data.featuredImage || "/social-preview-image.png"}
 >
-  <div class="container flow">
-    <article>
-      <header class="flow">
+  <article>
+    <div class="post-hero | flow">
+      <div class="container">
         <h1>{post.data.title}</h1>
         <p class="description">{post.data.description}</p>
         <div class="meta">
@@ -31,19 +31,27 @@ const { Content } = await post.render();
           <span> • {post.data.readingTime} min read</span>
         </div>
         <div class="tags">
-          {post.data.tags.map((tag) => (
-            <span class="tag">{tag}</span>
-          ))}
+          {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
         </div>
-      </header>
-      <div class="prose">
-        <Content />
       </div>
-    </article>
-  </div>
+    </div>
+    <div class="post-content">
+      <div class="container">
+        <div class="flow | prose">
+          <Content />
+        </div>
+      </div>
+    </div>
+  </article>
 </DefaultLayout>
 
-<style>
+<style lang="scss">
+  @use "../../assets/scss/abstracts/colors.scss" as *;
+
+  article {
+    margin-block: 2rem;
+  }
+
   .description {
     font-size: var(--step-1);
     color: var(--text-color-secondary);
@@ -51,8 +59,8 @@ const { Content } = await post.render();
   }
 
   .meta {
-    font-size: 0.875rem;
-    color: var(--text-color-secondary);
+    font-size: var(--step--1);
+    color: inherit;
   }
 
   .tags {
@@ -62,11 +70,11 @@ const { Content } = await post.render();
   }
 
   .tag {
-    background: var(--background-color-secondary);
+    background: var(--alert-100);
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
-    font-size: 0.75rem;
-    color: var(--text-color-secondary);
+    font-size: var(--step--2);
+    color: black;
   }
 
   .prose {
