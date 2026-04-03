@@ -8,7 +8,7 @@ features:
   - Accessible design for visually impaired users
   - Smart home integration
 link: https://mejoratucredit.com/
-featured: true
+featured: false
 tags: featured
 image: "creditycasa-screenshot.png"
 ---

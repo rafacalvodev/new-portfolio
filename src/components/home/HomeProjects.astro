@@ -1,10 +1,11 @@
 ---
 import { getCollection } from "astro:content";
-import { Picture } from "astro:assets";
 import VisitSite from "../../assets/icons/misc/CarbonArrowUpRight.svg";
 
 const projects = await getCollection("projects");
-const featuredProjects = projects.filter((project) => project.data.featured);
+const featuredProjects = projects.filter(
+  (project) => project.data.featured === true,
+);
 ---
 
 <section class="home-section | projects-section">
@@ -13,31 +14,56 @@ const featuredProjects = projects.filter((project) => project.data.featured);
       <h2>Algunos de los proyectos en los que he trabajado</h2>
       <p></p>
     </div>
-    <ul class="grid">
-      {
-        featuredProjects.map((project) => (
-          <li>
-            <article class="card flow">
-              {project.data.image && (
-                <img
-                  src={`/projects/${project.data.image}`}
-                  alt={`${project.data.title} screenshot`}
-                />
-              )}
-              <h3>{project.data.title}</h3>
-              <ul class="features-list | flow">
-                {project.data.features.map((feature) => (
-                  <li>{feature}</li>
-                ))}
-              </ul>
-              <a class="button" href={project.data.link} target="_blank">
-                Visitar sitio Web <VisitSite />
-              </a>
-            </article>
-          </li>
-        ))
-      }
-    </ul>
+    {
+      featuredProjects.length > 0 ? (
+        <ul class="grid">
+          {featuredProjects.map((project) => {
+            const linkTarget = project.data.link ?? `/${project.slug}`;
+            const isExternal =
+              typeof project.data.link === "string" &&
+              /^(https?:)?\/\//.test(project.data.link);
+
+            return (
+              <li>
+                <article class="card flow">
+                  {project.data.image && (
+                    <img
+                      src={`/projects/${project.data.image}`}
+                      alt={`${project.data.title} screenshot`}
+                    />
+                  )}
+
+                  <h3>{project.data.title}</h3>
+
+                  {project.data.features?.length ? (
+                    <ul class="features-list | flow">
+                      {project.data.features.map((feature) => (
+                        <li>{feature}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p class="muted">No hay características listadas aún.</p>
+                  )}
+
+                  <a
+                    class="button"
+                    href={linkTarget}
+                    target={isExternal ? "_blank" : "_self"}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                  >
+                    Visitar sitio Web <VisitSite />
+                  </a>
+                </article>
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <p class="home-section__empty">
+          No hay proyectos destacados en este momento.
+        </p>
+      )
+    }
   </div>
 </section>
 
