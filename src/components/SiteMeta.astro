@@ -30,7 +30,7 @@ let imageUrl = `${Astro.site}${image || "/social-preview-image.png"}`;
 <meta name="twitter:image" content={imageUrl} />
 
 <!-- JSON-LD structured data -->
-<script type="application/ld+json">
+<script type="application/ld+json" is:inline>
 {JSON.stringify({
   "@context": "https://schema.org",
   "@type": "WebPage",

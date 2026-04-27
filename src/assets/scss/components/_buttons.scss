@@ -49,6 +49,18 @@
     }
   }
 
+  @media (forced-colors: active) {
+    border: 2px solid ButtonBorder;
+    color: ButtonText;
+    background-color: ButtonFace;
+
+    &:hover,
+    &:focus {
+      background-color: ButtonFace;
+      border-color: ButtonBorder;
+    }
+  }
+
   &.color-info {
     background-color: var(--info-300);
     border-color: (var(--info-300));

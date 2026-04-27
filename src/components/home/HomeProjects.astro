@@ -18,7 +18,7 @@ const featuredProjects = projects.filter(
       featuredProjects.length > 0 ? (
         <ul class="grid">
           {featuredProjects.map((project) => {
-            const linkTarget = project.data.link ?? `/${project.slug}`;
+            const linkTarget = project.data.link ?? "/portafolio";
             const isExternal =
               typeof project.data.link === "string" &&
               /^(https?:)?\/\//.test(project.data.link);

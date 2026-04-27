@@ -36,7 +36,7 @@ const { page } = Astro.props;
       <div class="grid">
         {
           page.data.map((post) => (
-            <article class="flow | card" key={post.slug}>
+            <article class="flow | card">
               {post.data.featuredImage && (
                 <img
                   src={post.data.featuredImage}
@@ -48,13 +48,11 @@ const { page } = Astro.props;
               <div class="blog-card__content flex">
                 <div class="blog-card__tags | flex">
                   {post.data.tags?.map((tag) => (
-                    <span class="tag" key={`${post.slug}-${tag}`}>
-                      {tag}
-                    </span>
+                    <span class="tag">{tag}</span>
                   ))}
                 </div>
                 <h2 class="blog-card__title">
-                  <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+                  <a href={`/blog/${post.id}`}>{post.data.title}</a>
                 </h2>
                 <p class="blog-card__description">{post.data.description}</p>
                 <div class="blog-card__meta">

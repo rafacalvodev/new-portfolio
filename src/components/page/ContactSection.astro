@@ -4,54 +4,105 @@
       <div class="contact-section__text | flow">
         <h2>Contratar servicios de Programador Web</h2>
         <p>
-          ¿Quieres pedir presupuesto para crear una página web o tienda online? ¿Quieres otro servicio web?
+          ¿Quieres pedir presupuesto para crear una página web o tienda online?
+          ¿Quieres otro servicio web?
         </p>
         <p>
-          Rellena el formulario de contacto, marcando los servicios a contratar y explicando con el máximo detalle tus necesidades (nº de secciones, idiomas, sector, etc).
+          Rellena el formulario de contacto, marcando los servicios a contratar
+          y explicando con el máximo detalle tus necesidades (nº de secciones,
+          idiomas, sector, etc).
         </p>
         <p>
-          Si aún tienes dudas al contratar mis servicios de programador web freelance, igualmente puedes preguntarme cualquier consulta rellenando el formulario.
+          Si aún tienes dudas al contratar mis servicios de programador web
+          freelance, igualmente puedes preguntarme cualquier consulta rellenando
+          el formulario.
         </p>
       </div>
       <div class="contact-section__form">
         <h3>Contacto:</h3>
-        <form name="contact" method="POST" data-netlify="true" class="form flow" netlify>
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          class="form flow"
+        >
           <div>
-            <label>Nombre: </label>
-            <input type="text" name="name" />
+            <label for="name"
+              >Nombre: <span aria-label="requerido">*</span></label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              aria-required="true"
+            />
           </div>
           <div>
-            <label>Email: </label>
-            <input type="email" name="email" />
+            <label for="email"
+              >Email: <span aria-label="requerido">*</span></label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              aria-required="true"
+            />
           </div>
           <fieldset>
             <legend>¿Con qué te puedo ayudar?</legend>
             <ul role="list" class="grid">
               <li>
-                <input type="checkbox" id="website" name="website" value="Página Web">
+                <input
+                  type="checkbox"
+                  id="website"
+                  name="website"
+                  value="Página Web"
+                />
                 <label for="website">Página Web</label>
               </li>
               <li>
-                <input type="checkbox" id="ecommerce" name="ecommerce" value="Tienda Online">
+                <input
+                  type="checkbox"
+                  id="ecommerce"
+                  name="ecommerce"
+                  value="Tienda Online"
+                />
                 <label for="ecommerce">Tienda Online</label>
               </li>
               <li>
-                <input type="checkbox" id="optimize" name="optimize" value="Optimización">
+                <input
+                  type="checkbox"
+                  id="optimize"
+                  name="optimize"
+                  value="Optimización"
+                />
                 <label for="optimize">Optimización Web</label>
               </li>
               <li>
-                <input type="checkbox" id="maintenance" name="maintenance" value="Mantenimiento">
+                <input
+                  type="checkbox"
+                  id="maintenance"
+                  name="maintenance"
+                  value="Mantenimiento"
+                />
                 <label for="maintenance">Mantenimiento Web</label>
               </li>
               <li>
-                <input type="checkbox" id="doubt" name="doubt" value="No estoy seguro/a.">
+                <input
+                  type="checkbox"
+                  id="doubt"
+                  name="doubt"
+                  value="No estoy seguro/a."
+                />
                 <label for="doubt">No estoy seguro/a.</label>
               </li>
-            </ul>           
+            </ul>
           </fieldset>
           <div>
-            <label>Cuentame de qué va tu proyecto/idea:</label>
-            <textarea name="message"></textarea>
+            <label for="message">Cuentame de qué va tu proyecto/idea:</label>
+            <textarea id="message" name="message"></textarea>
           </div>
           <div>
             <button class="button" type="submit">Enviar</button>
@@ -70,8 +121,9 @@
     color: var(--dark-200);
   }
 
-  .form{
-    label, legend {
+  .form {
+    label,
+    legend {
       font-weight: 600;
     }
 
@@ -81,12 +133,13 @@
 
     li {
       list-style: none;
-      label{
+      label {
         font-weight: 500;
       }
     }
 
-    input, textarea {
+    input,
+    textarea {
       background-color: var(--neutral-100);
     }
   }

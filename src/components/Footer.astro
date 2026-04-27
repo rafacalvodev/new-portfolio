@@ -1,9 +1,9 @@
 ---
 // import CallToAction from "./CallToAction.astro";
-import Logo from '../assets/img/rafael-calvo-desarrollador-web-freelance-logo.svg';
-import GithubIcon from '../assets/icons/social-media/CarbonLogoGithub.svg';
-import LinkedinIcon from '../assets/icons/social-media/CarbonLogoLinkedin.svg';
-import InstagramIcon from '../assets/icons/social-media/CarbonLogoInstagram.svg';
+import Logo from "../assets/img/rafael-calvo-desarrollador-web-freelance-logo.svg";
+import GithubIcon from "../assets/icons/social-media/CarbonLogoGithub.svg";
+import LinkedinIcon from "../assets/icons/social-media/CarbonLogoLinkedin.svg";
+import InstagramIcon from "../assets/icons/social-media/CarbonLogoInstagram.svg";
 const currentYear = new Date().getFullYear();
 ---
 
@@ -12,19 +12,36 @@ const currentYear = new Date().getFullYear();
     <div class="grid | footer__grid">
       <div class="flow | footer__contact">
         <a href="/" class="footer-logo">
-          <Logo class="logo"/>
+          <Logo class="logo" />
           <span>Desarrollador Web Freelance</span>
-        </a> 
+        </a>
         <div class="footer__mail">
           <h4>Si tienes alguna duda o consulta, puedes escribir a:</h4>
-          <a href="mailto:rafacalvodev@gmail.com">rafacalvodev@gmail.com</a>
+          <a href="mailto:contacto@rafacalvodev.com"
+            >contacto@rafacalvodev.com</a
+          >
         </div>
         <div class="footer__social">
           <h4>O puedes encontrarme en:</h4>
           <ul class="flex">
-            <li><a href="https://github.com/rafacalvodev"><GithubIcon/></a></li>
-            <li><a href="https://www.linkedin.com/in/rafacalvodev/"><LinkedinIcon/></a></li>
-            <li><a href="https://www.instagram.com/rafacalvodev/"><InstagramIcon/></a></li>
+            <li>
+              <a
+                href="https://github.com/rafacalvodev"
+                aria-label="GitHub de Rafael Calvo"><GithubIcon /></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/rafacalvodev/"
+                aria-label="LinkedIn de Rafael Calvo"><LinkedinIcon /></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/rafacalvodev/"
+                aria-label="Instagram de Rafael Calvo"><InstagramIcon /></a
+              >
+            </li>
           </ul>
         </div>
       </div>
@@ -33,9 +50,21 @@ const currentYear = new Date().getFullYear();
         <ul class="flow">
           <li><a href="/">Inicio</a></li>
           <li><a href="/portafolio/">Portafolio</a></li>
-          <li><a href="/servicios/desarrollador-de-paginas-web/">Creación de Páginas Web</a></li>
-          <li><a href="/servicios/desarrollador-de-tiendas-online/">Creación de Tiendas Online</a></li>
-          <li><a href="/servicios/optimizacion-seo-y-posicionamiento/">SEO y Optimización Web</a></li>
+          <li>
+            <a href="/servicios/desarrollador-de-paginas-web/"
+              >Creación de Páginas Web</a
+            >
+          </li>
+          <li>
+            <a href="/servicios/desarrollador-de-tiendas-online/"
+              >Creación de Tiendas Online</a
+            >
+          </li>
+          <li>
+            <a href="/servicios/optimizacion-seo-y-posicionamiento/"
+              >SEO y Optimización Web</a
+            >
+          </li>
           <li><a href="/servicios/mantenimiento-web/">Mantenimiento Web</a></li>
           <li><a href="/contacto/">Contacto</a></li>
         </ul>
@@ -44,13 +73,11 @@ const currentYear = new Date().getFullYear();
   </div>
   <div class="footer__copy">
     <p>
-      &copy; {currentYear} - Rafael Calvo, desarrollador Web Freelance. Sitio web hecho con ☕ y <a href="https://astro.build/"
-        >Astro</a
-      >.
+      &copy; {currentYear} - Rafael Calvo, desarrollador Web Freelance. Sitio web
+      hecho con ☕ y <a href="https://astro.build/">Astro</a>.
     </p>
   </div>
 </footer>
-
 
 <style lang="scss">
   .footer {

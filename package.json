@@ -19,5 +19,9 @@
     "astro-icon": "^1.1.5",
     "sass": "^1.93.2",
     "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.43.0",
+    "oxlint": "^1.58.0"
   }
 }

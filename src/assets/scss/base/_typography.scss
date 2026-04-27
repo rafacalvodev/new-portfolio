@@ -55,6 +55,22 @@ body {
     }
   }
 
+  @media (forced-colors: active) {
+    a:not(.button) {
+      color: LinkText;
+      text-decoration: underline;
+
+      &:visited {
+        color: VisitedText;
+      }
+
+      &:hover,
+      &:focus {
+        color: LinkText;
+      }
+    }
+  }
+
   :where(main) a {
     word-wrap: break-word;
     word-break: break-word;

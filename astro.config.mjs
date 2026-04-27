@@ -1,14 +1,14 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
-import mdx from '@astrojs/mdx';
+import mdx from "@astrojs/mdx";
 
-import icon from 'astro-icon';
+import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
   compressHTML: true,
-  site: 'http://localhost:4321/',
+  site: "http://localhost:4321/",
   integrations: [mdx(), icon()],
   vite: {
     css: {
@@ -21,5 +21,4 @@ export default defineConfig({
       },
     },
   },
-  legacy: {collections: true},
 });

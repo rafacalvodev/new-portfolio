@@ -3,57 +3,63 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
 import { getCollection } from "astro:content";
 
 const posts = await getCollection("blog");
-const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const sortedPosts = posts.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
 ---
 
-<DefaultLayout title="Blog" description="Read my latest thoughts on web development and design.">
+<DefaultLayout
+  title="Blog"
+  description="Read my latest thoughts on web development and design."
+>
   <main class="section">
     <div class="container flow">
       <h1>Blog</h1>
       <p>Read my latest thoughts on web development and design.</p>
 
       <div class="grid">
-        {sortedPosts.map((post) => (
-          <article class="flow | blog-card">
-            {post.data.featuredImage && (
-              <img
-                src={post.data.featuredImage}
-                alt={post.data.title}
-                class="blog-card__image"
-                loading="lazy"
-              />
-            )}
-            <div class="blog-card__content flex">
-              <div class="blog-card__tags">
-                {post.data.tags.map((tag) => (
-                  <span class="tag">{tag}</span>
-                ))}
+        {
+          sortedPosts.map((post) => (
+            <article class="flow | blog-card">
+              {post.data.featuredImage && (
+                <img
+                  src={post.data.featuredImage}
+                  alt={post.data.title}
+                  class="blog-card__image"
+                  loading="lazy"
+                />
+              )}
+              <div class="blog-card__content flex">
+                <div class="blog-card__tags">
+                  {post.data.tags.map((tag) => (
+                    <span class="tag">{tag}</span>
+                  ))}
+                </div>
+                <h2 class="blog-card__title">
+                  <a href={`/blog/${post.id}`}>{post.data.title}</a>
+                </h2>
+                <p class="blog-card__description">{post.data.description}</p>
+                <div class="blog-card__meta">
+                  <time datetime={post.data.date.toISOString()}>
+                    {post.data.date.toLocaleDateString()}
+                  </time>
+                  <span> • {post.data.readingTime} min read</span>
+                </div>
               </div>
-              <h2 class="blog-card__title">
-                <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-              </h2>
-              <p class="blog-card__description">{post.data.description}</p>
-              <div class="blog-card__meta">
-                <time datetime={post.data.date.toISOString()}>
-                  {post.data.date.toLocaleDateString()}
-                </time>
-                <span> • {post.data.readingTime} min read</span>
-              </div>
-              
-            </div>
-          </article>
-        ))}
+            </article>
+          ))
+        }
       </div>
     </div>
   </main>
 </DefaultLayout>
 
 <style lang="scss">
-	@use '../assets/scss/abstracts/colors.scss' as *;
+  @use "../assets/scss/abstracts/colors.scss" as *;
 
-	.grid {
-		--minimun: 24ch;
-	}
+  .grid {
+    --minimun: 24ch;
+  }
 
   .flex {
     justify-content: space-between;
@@ -110,7 +116,8 @@ const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.get
 
   .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 12px light-dark(hsla(0, 0%, 0%, 0.2), hsla(0, 0%, 100%, 0.2));
+    box-shadow: 0 4px 12px
+      light-dark(hsla(0, 0%, 0%, 0.2), hsla(0, 0%, 100%, 0.2));
   }
 
   .tag {
@@ -118,6 +125,6 @@ const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.get
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
     font-size: var(--step--2);
-    color:black;
+    color: black;
   }
 </style>

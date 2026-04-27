@@ -3,9 +3,9 @@ title: Ascendo Design
 author: Rafael Calvo
 description: A comprehensive smart home solution designed specifically for users with visual impairments, featuring voice-first interactions and haptic feedback
 features:
-  - Voice-first interactions
-  - Haptic feedback
-  - Accessible design for visually impaired users
+  - Página  tipo Landing Page.
+  - Compañía de remodelaciones de interiores.
+  - Hecho con Wordpress.
   - Smart home integration
 link: https://ascendodesign.com/
 featured: true
