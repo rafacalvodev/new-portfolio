@@ -9,7 +9,7 @@ features:
   - Smart home integration
 link: https://abbudsistertips.com/
 featured: false
-image: "ascendodesign-screenshot.png"
+image: "abbudsistertips-screenshot.png"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat viverra odio, sed gravida enim feugiat sit amet. Praesent augue lorem, ultricies in elementum mattis, egestas id lacus. Sed sed nisi nulla. Cras ac ultricies tellus. Praesent in ex hendrerit elit vestibulum facilisis ut mollis ante. Nullam cursus commodo nisi, at rutrum tortor pellentesque id. Aenean efficitur quis enim sit amet rutrum. Integer condimentum dignissim ligula, ut hendrerit tellus consequat eu. Vestibulum eu suscipit nunc. Nunc fringilla sollicitudin augue, vel hendrerit quam malesuada sed. Praesent purus augue, tempor quis elit sit amet, dapibus rhoncus erat. Vivamus erat quam, aliquet non vehicula sed, tempus non ante. Ut tempor vitae felis id fermentum.

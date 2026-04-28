@@ -32,11 +32,22 @@ const { class: className, ...rest } = Astro.props;
       image={image}
       author={author}
     />
+    <!-- Cloudflare Captcha -->
+    <link rel="preconnect" href="https://challenges.cloudflare.com" />
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+      async
+      defer></script>
   </head>
   <body tabindex="-1">
     <SkipLink />
     <Header />
-    <main id="main-content" transition:animate="fade" class={className} {...rest}>
+    <main
+      id="main-content"
+      transition:animate="fade"
+      class={className}
+      {...rest}
+    >
       <slot />
     </main>
     <Footer />

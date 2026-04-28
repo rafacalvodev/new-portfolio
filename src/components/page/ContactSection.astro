@@ -24,8 +24,14 @@
           name="contact"
           method="POST"
           data-netlify="true"
+          data-netlify-honeypot="bot-field"
           class="form flow"
         >
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="sr-only" aria-hidden="true">
+            <label for="bot-field">No rellenar este campo.</label>
+            <input id="bot-field" name="bot-field" />
+          </p>
           <div>
             <label for="name"
               >Nombre: <span aria-label="requerido">*</span></label
@@ -104,43 +110,51 @@
             <label for="message">Cuentame de qué va tu proyecto/idea:</label>
             <textarea id="message" name="message"></textarea>
           </div>
-          <div>
-            <button class="button" type="submit">Enviar</button>
+          <div
+            class="cf-turnstile"
+            data-sitekey="0x4AAAAAAAzvzdMRaR4lki2y"
+            data-theme="light"
+            data-size="normal"
+            data-callback="onSuccess"
+          >
+            <div>
+              <button class="button" type="submit">Enviar</button>
+            </div>
           </div>
         </form>
       </div>
     </div>
   </div>
-</section>
 
-<style lang="scss">
-  .contact-section {
-    margin-block-start: var(--space-3xl);
-    padding-block: var(--space-l);
-    background-color: var(--alert-100);
-    color: var(--dark-200);
-  }
-
-  .form {
-    label,
-    legend {
-      font-weight: 600;
+  <style lang="scss">
+    .contact-section {
+      margin-block-start: var(--space-3xl);
+      padding-block: var(--space-l);
+      background-color: var(--alert-100);
+      color: var(--dark-200);
     }
 
-    ul {
-      margin-inline: 0;
-    }
+    .form {
+      label,
+      legend {
+        font-weight: 600;
+      }
 
-    li {
-      list-style: none;
-      label {
-        font-weight: 500;
+      ul {
+        margin-inline: 0;
+      }
+
+      li {
+        list-style: none;
+        label {
+          font-weight: 500;
+        }
+      }
+
+      input,
+      textarea {
+        background-color: var(--neutral-100);
       }
     }
-
-    input,
-    textarea {
-      background-color: var(--neutral-100);
-    }
-  }
-</style>
+  </style>
+</section>

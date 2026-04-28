@@ -3,10 +3,9 @@ title: Credit Restructuring Solutions
 author: John Doe
 description: A comprehensive smart home solution designed specifically for users with visual impairments, featuring voice-first interactions and haptic feedback
 features:
-  - Voice-first interactions
-  - Haptic feedback
-  - Accessible design for visually impaired users
-  - Smart home integration
+  - Página web corporativa.
+  - Compañía de asesoramiento financiero.
+  - Hecho con Wordpress con diesño personalizado.
 link: https://www.creditrestructuringsolutions.com/
 featured: true
 image: "crs-screenshot.png"

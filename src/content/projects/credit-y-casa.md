@@ -1,15 +1,15 @@
 ---
-title: RestauraScores
+title: Credit y Casa
 author: John Doe
 description: A comprehensive smart home solution designed specifically for users with visual impairments, featuring voice-first interactions and haptic feedback
 features:
-  - Voice-first interactions
+  - Página tipo **landing page**.
   - Haptic feedback
   - Accessible design for visually impaired users
   - Smart home integration
-link: https://restaurascores.com/
+link: https://creditycasa.com/
 featured: false
-image: "ascendodesign-screenshot.png"
+image: "creditycasa-screenshot.png"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat viverra odio, sed gravida enim feugiat sit amet. Praesent augue lorem, ultricies in elementum mattis, egestas id lacus. Sed sed nisi nulla. Cras ac ultricies tellus. Praesent in ex hendrerit elit vestibulum facilisis ut mollis ante. Nullam cursus commodo nisi, at rutrum tortor pellentesque id. Aenean efficitur quis enim sit amet rutrum. Integer condimentum dignissim ligula, ut hendrerit tellus consequat eu. Vestibulum eu suscipit nunc. Nunc fringilla sollicitudin augue, vel hendrerit quam malesuada sed. Praesent purus augue, tempor quis elit sit amet, dapibus rhoncus erat. Vivamus erat quam, aliquet non vehicula sed, tempus non ante. Ut tempor vitae felis id fermentum.

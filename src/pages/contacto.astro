@@ -12,8 +12,8 @@ import PageBanner from "../components/page/PageBanner.astro";
   <section id="contact" class="page-section | contact-section">
     <div class="container">
       <div class="grid">
-        <div class="left-col">
-          <h2>¿Cómo puedo ayudarte?</h2>
+        <div class="left-col | flow">
+          <h2>Contacto</h2>
           <p>
             Si tienes alguna pregunta, necesitas una cotización o simplemente
             quieres discutir tu proyecto, no dudes en contactarme. Estoy aquí
@@ -29,22 +29,107 @@ import PageBanner from "../components/page/PageBanner.astro";
           </ul>
         </div>
         <div class="right-col">
-          <h2>Envíame un mensaje</h2>
           <form
-            class="contact-form"
-            action="https://formspree.io/f/your-form-id"
+            name="contact"
             method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            class="form flow"
           >
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required />
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="_replyto" required />
-
-            <label for="message">Mensaje:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit">Enviar</button>
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="sr-only" aria-hidden="true">
+              <label for="bot-field">No rellenar este campo.</label>
+              <input id="bot-field" name="bot-field" />
+            </p>
+            <div>
+              <label for="name"
+                >Nombre: <span aria-label="requerido">*</span></label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                aria-required="true"
+              />
+            </div>
+            <div>
+              <label for="email"
+                >Email: <span aria-label="requerido">*</span></label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                aria-required="true"
+              />
+            </div>
+            <fieldset>
+              <legend>¿Con qué te puedo ayudar?</legend>
+              <ul role="list" class="grid">
+                <li>
+                  <input
+                    type="checkbox"
+                    id="website"
+                    name="website"
+                    value="Página Web"
+                  />
+                  <label for="website">Página Web</label>
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="ecommerce"
+                    name="ecommerce"
+                    value="Tienda Online"
+                  />
+                  <label for="ecommerce">Tienda Online</label>
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="optimize"
+                    name="optimize"
+                    value="Optimización"
+                  />
+                  <label for="optimize">Optimización Web</label>
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="maintenance"
+                    name="maintenance"
+                    value="Mantenimiento"
+                  />
+                  <label for="maintenance">Mantenimiento Web</label>
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="doubt"
+                    name="doubt"
+                    value="No estoy seguro/a."
+                  />
+                  <label for="doubt">No estoy seguro/a.</label>
+                </li>
+              </ul>
+            </fieldset>
+            <div>
+              <label for="message">Cuentame de qué va tu proyecto/idea:</label>
+              <textarea id="message" name="message"></textarea>
+            </div>
+            <div
+              class="cf-turnstile"
+              data-sitekey="0x4AAAAAAAzvzdMRaR4lki2y"
+              data-theme="light"
+              data-size="normal"
+              data-callback="onSuccess"
+            >
+            </div>
+            <div>
+              <button class="button" type="submit">Enviar</button>
+            </div>
           </form>
         </div>
       </div>
@@ -61,5 +146,12 @@ import PageBanner from "../components/page/PageBanner.astro";
       rgba(87, 199, 133, 1) 50%,
       rgba(83, 132, 237, 1) 100%
     );
+  }
+
+  .right-col {
+    form {
+      background-color: var(--alert-100);
+      padding: var(--space-m);
+    }
   }
 </style>

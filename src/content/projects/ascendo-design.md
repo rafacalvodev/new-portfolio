@@ -5,8 +5,7 @@ description: A comprehensive smart home solution designed specifically for users
 features:
   - Página  tipo Landing Page.
   - Compañía de remodelaciones de interiores.
-  - Hecho con Wordpress.
-  - Smart home integration
+  - Hecho con Wordpress con diseño personalizado.
 link: https://ascendodesign.com/
 featured: true
 image: "ascendodesign-screenshot.png"

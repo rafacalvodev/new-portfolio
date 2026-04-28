@@ -3,10 +3,9 @@ title: Fundación Arquitectura y Ciudad
 author: John Doe
 description: A comprehensive smart home solution designed specifically for users with visual impairments, featuring voice-first interactions and haptic feedback
 features:
-  - Voice-first interactions
-  - Haptic feedback
-  - Accessible design for visually impaired users
-  - Smart home integration
+  - Sitio web tipo blog y repositorio.
+  - Fundación dedicada a la generación y difusión de conocimientos en el campo de la arquitectura.
+  - Hecho con Wordpress basado en una plantilla.
 link: https://fundaayc.com/
 featured: true
 image: "fac-screenshot.png"
