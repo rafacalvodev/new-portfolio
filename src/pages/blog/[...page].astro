@@ -1,6 +1,6 @@
 ---
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
-import { Pagination } from "accessible-astro-components";
+import Pagination from "../../components/Pagination.astro";
 import { getCollection } from "astro:content";
 import type { GetStaticPaths, Page } from "astro";
 import type { CollectionEntry } from "astro:content";
@@ -71,12 +71,9 @@ const { page } = Astro.props;
   <div id="pagination">
     <div class="container flex">
       <Pagination
-        firstPage={page.url.prev ? "/blog" : null}
+        basePath="/blog"
         previousPage={page.url.prev ? page.url.prev : null}
         nextPage={page.url.next ? page.url.next : null}
-        lastPage={page.url.next
-          ? `/blog/${Math.ceil(page.total / page.size)}`
-          : null}
         currentPage={page.currentPage}
         totalPages={Math.ceil(page.total / page.size)}
       />
