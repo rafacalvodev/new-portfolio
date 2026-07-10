@@ -17,3 +17,4 @@ Tiene tema claro/oscuro que dependerá del tema del sistema operativo (o navegad
 - [ ]  Opción multilenguaje, empezando por inglés.
 - [ ]  Posible integración con un Headless CMS.
 - [ ]  Posible migración a CSS puro.
+- [ ]  Posible integración con un headless CMS para el blog.
